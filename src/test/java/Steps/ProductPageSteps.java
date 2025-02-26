@@ -5,7 +5,7 @@ import Constants.URLs;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import static Constants.SuccessfulMessages.EXPECTED_SUCCESSFUL_PRODUCT_REVIEW_MESSAGE;
+import static Constants.Messages.EXPECTED_SUCCESSFUL_PRODUCT_REVIEW_MESSAGE;
 
 public class ProductPageSteps extends BaseSteps {
     private final ProductPage productPage;

@@ -22,12 +22,4 @@ public class BaseSteps {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
     }
 
-    public void waitForElementClickable(WebElement element) {
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
-    }
-
-    public void clickElementByJS(WebElement element) {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
-    }
-
 }

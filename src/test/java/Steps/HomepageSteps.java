@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static Constants.SuccessfulMessages.EXPECTED_SUCCESSFUL_ADD_TO_CART_MODAL_MESSAGE;
+import static Constants.Messages.EXPECTED_SUCCESSFUL_ADD_TO_CART_MODAL_MESSAGE;
 public class HomepageSteps extends BaseSteps {
     Homepage homepage;
 
