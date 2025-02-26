@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import static Constants.SuccessfulMessages.EXPECTED_SUCCESSFUL_PRODUCT_REVIEW_MESSAGE;
 
 public class ProductPageSteps extends BaseSteps {
-    private ProductPage productPage;
+    private final ProductPage productPage;
 
     public ProductPageSteps(WebDriver driver) {
         super(driver);

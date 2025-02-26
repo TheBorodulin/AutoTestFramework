@@ -30,14 +30,4 @@ public class BaseSteps {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
 
-    public void safeClick(WebElement element) {
-        scrollToElement(element);
-        waitForElementClickable(element);
-
-        if (ExpectedConditions.elementToBeClickable(element).apply(driver) != null) {
-            element.click();
-        } else {
-            clickElementByJS(element);
-        }
-    }
 }
