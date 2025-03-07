@@ -22,13 +22,8 @@ public class Homepage extends BasePage {
         return getVisibleElement(modalTitle);
     }
 
-    public int getProductsCount() {
-        return getVisibleElements(productIcon).size();
-    }
-
     public WebElement getProductViewButton(String productNumber) {
-        String productViewButton;
-        productViewButton = "(//a[contains(text(),'View Product')])[1]";
+        String productViewButton = "(//a[contains(text(),'View Product')])[%s]";
         return getClickableElement(By.xpath(String.format(productViewButton, productNumber)));
     }
 }

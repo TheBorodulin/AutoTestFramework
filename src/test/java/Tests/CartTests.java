@@ -10,6 +10,6 @@ public class CartTests extends BaseTests {
 
         homepageSteps.openHomepage();
         homepageSteps.addProductToCart(productNumber);
-        homepageSteps.verifyModalTitle();
+        homepageSteps.assertModalTitle();
     }
 }

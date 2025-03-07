@@ -9,6 +9,6 @@ public class ProductTests extends BaseTests {
         final int expectedProductCount = 34;
 
         homepageSteps.openHomepage();
-        homepageSteps.verifyProductCount(expectedProductCount);
+        homepageSteps.assertProductCount(expectedProductCount);
     }
 }

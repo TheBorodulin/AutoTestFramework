@@ -11,7 +11,7 @@ import java.util.List;
 
 public class BasePage {
     protected WebDriver driver;
-    protected WebDriverWait wait;
+    protected static WebDriverWait wait;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -26,7 +26,7 @@ public class BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(element));
     }
 
-    protected List<WebElement> getVisibleElements(By elements) {
+    public static List<WebElement> getVisibleElements(By elements) {
         return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(elements));
     }
 }

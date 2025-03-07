@@ -1,14 +1,19 @@
 package Steps;
 
+import Pages.BasePage;
 import Pages.Homepage;
 import Constants.URLs;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import static Constants.Messages.EXPECTED_SUCCESSFUL_ADD_TO_CART_MODAL_MESSAGE;
+
 public class HomepageSteps extends BaseSteps {
     Homepage homepage;
+
+    private final By productIcon = By.xpath("//div[@class='features_items']//div[@class='product-image-wrapper']");
 
     public HomepageSteps(WebDriver driver) {
         super(driver);
@@ -25,7 +30,7 @@ public class HomepageSteps extends BaseSteps {
         addButton.click();
     }
 
-    public void verifyModalTitle() {
+    public void assertModalTitle() {
         Assert.assertEquals(EXPECTED_SUCCESSFUL_ADD_TO_CART_MODAL_MESSAGE, homepage.getModalTitle().getText().trim());
     }
 
@@ -35,8 +40,12 @@ public class HomepageSteps extends BaseSteps {
         viewButton.click();
     }
 
-    public void verifyProductCount(int expectedCount) {
-        int actualCount = homepage.getProductsCount();
+    public void assertProductCount(int expectedCount) {
+        int actualCount = getProductsCount();
         Assert.assertEquals(expectedCount, actualCount);
+    }
+
+    private int getProductsCount() {
+        return BasePage.getVisibleElements(productIcon).size();
     }
 }

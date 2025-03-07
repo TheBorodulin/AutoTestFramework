@@ -14,6 +14,6 @@ public class ProductReviewTests extends BaseTests {
         homepageSteps.clickOnProductViewButton(productNumber);
 
         productPageSteps.writeReview(name, email, reviewText);
-        productPageSteps.assertSuccessMessageVisible();
+        productPageSteps.assertReviewSuccessNotification();
     }
 }
