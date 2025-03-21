@@ -1,6 +1,4 @@
 package Steps;
-
-import Pages.BasePage;
 import Pages.Homepage;
 import Constants.URLs;
 import org.junit.Assert;
