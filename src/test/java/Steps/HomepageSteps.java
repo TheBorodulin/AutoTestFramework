@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static Constants.Messages.EXPECTED_SUCCESSFUL_ADD_TO_CART_MODAL_MESSAGE;
+import static Constants.Messages.SUCCESSFUL_ADD_TO_CART_MODAL_MESSAGE;
 
 public class HomepageSteps extends BaseSteps {
     Homepage homepage;
@@ -31,7 +31,7 @@ public class HomepageSteps extends BaseSteps {
     }
 
     public void assertModalTitle() {
-        Assert.assertEquals(EXPECTED_SUCCESSFUL_ADD_TO_CART_MODAL_MESSAGE, homepage.getModalTitle().getText().trim());
+        Assert.assertEquals(SUCCESSFUL_ADD_TO_CART_MODAL_MESSAGE, homepage.getModalTitle().getText().trim());
     }
 
     public void clickOnProductViewButton(String productNumber) {
@@ -46,6 +46,6 @@ public class HomepageSteps extends BaseSteps {
     }
 
     private int getProductsCount() {
-        return BasePage.getVisibleElements(productIcon).size();
+        return homepage.getVisibleElements(productIcon).size();
     }
 }

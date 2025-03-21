@@ -5,7 +5,7 @@ import Constants.URLs;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
-import static Constants.Messages.EXPECTED_SUCCESSFUL_PRODUCT_REVIEW_MESSAGE;
+import static Constants.Messages.SUCCESSFUL_PRODUCT_REVIEW_MESSAGE;
 
 public class ProductPageSteps extends BaseSteps {
     private final ProductPage productPage;
@@ -49,6 +49,6 @@ public class ProductPageSteps extends BaseSteps {
 
     public void assertReviewSuccessNotification() {
         String actualSuccessText = productPage.getSuccessMessageElement().getText();
-        Assert.assertEquals(EXPECTED_SUCCESSFUL_PRODUCT_REVIEW_MESSAGE, actualSuccessText);
+        Assert.assertEquals(SUCCESSFUL_PRODUCT_REVIEW_MESSAGE, actualSuccessText);
     }
 }
