@@ -1,12 +1,13 @@
-package Steps;
-import Pages.Homepage;
-import Constants.URLs;
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+package steps;
 
-import static Constants.Messages.SUCCESSFUL_ADD_TO_CART_MODAL_MESSAGE;
+import static constants.Messages.SUCCESSFUL_ADD_TO_CART_MODAL_MESSAGE;
+
+import org.junit.Assert;
+import org.openqa.selenium.*;
+
+import constants.URLs;
+import pages.Homepage;
+
 
 public class HomepageSteps extends BaseSteps {
     Homepage homepage;
