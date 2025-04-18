@@ -1,7 +1,7 @@
-package Tests;
+package tests;
 
-import Steps.HomepageSteps;
-import Steps.ProductPageSteps;
+import steps.HomepageSteps;
+import steps.ProductPageSteps;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
@@ -30,7 +30,8 @@ public abstract class BaseTests {
             driver.quit();
         }
     }
-    private void initializeSteps(){
+
+    private void initializeSteps() {
         homepageSteps = new HomepageSteps(driver);
         productPageSteps = new ProductPageSteps(driver);
     }

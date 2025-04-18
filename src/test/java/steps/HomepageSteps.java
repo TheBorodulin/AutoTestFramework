@@ -1,17 +1,15 @@
-package Steps;
-import Pages.Homepage;
-import Constants.URLs;
+package steps;
+
+import pages.Homepage;
+import constants.URLs;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static Constants.Messages.SUCCESSFUL_ADD_TO_CART_MODAL_MESSAGE;
+import static constants.Messages.SUCCESSFUL_ADD_TO_CART_MODAL_MESSAGE;
 
 public class HomepageSteps extends BaseSteps {
-    Homepage homepage;
-
-    private final By productIcon = By.xpath("//div[@class='features_items']//div[@class='product-image-wrapper']");
+    private final Homepage homepage;
 
     public HomepageSteps(WebDriver driver) {
         super(driver);
@@ -39,11 +37,7 @@ public class HomepageSteps extends BaseSteps {
     }
 
     public void assertProductCount(int expectedCount) {
-        int actualCount = getProductsCount();
+        int actualCount = homepage.getProductsCount(); // Directly calling the method from Homepage
         Assert.assertEquals(expectedCount, actualCount);
-    }
-
-    private int getProductsCount() {
-        return homepage.getVisibleElements(productIcon).size();
     }
 }
