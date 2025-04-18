@@ -1,30 +1,30 @@
 package api;
 
-import org.junit.Assert;
-import org.junit.Test;
-
 import api.constants.RequestPaths;
 import api.models.GetSingleUserResponseDTO;
 import io.restassured.RestAssured;
+import org.junit.Assert;
+import org.junit.Test;
 
 import static io.restassured.RestAssured.useRelaxedHTTPSValidation;
-import static io.restassured.http.ContentType.JSON;
 
 public class SingleUserApiTest {
     @Test
     public void verifySingleUserData() {
+        int userNumber = 2;
         useRelaxedHTTPSValidation();
 
         GetSingleUserResponseDTO response = RestAssured.given()
                 .baseUri(RequestPaths.BASE_URL)
                 .basePath(RequestPaths.SINGLE_USER)
+                .pathParam("userNumber", userNumber)
                 .when()
                 .get()
                 .then()
                 .statusCode(200)
                 .extract().as(GetSingleUserResponseDTO.class);
 
-        Assert.assertEquals(2, response.getData().getId());
+        Assert.assertEquals( userNumber, response.getData().getId());
         Assert.assertEquals("janet.weaver@reqres.in", response.getData().getEmail());
         Assert.assertEquals("Janet", response.getData().getFirst_name());
         Assert.assertEquals("Weaver", response.getData().getLast_name());

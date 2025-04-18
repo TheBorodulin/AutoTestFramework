@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import api.constants.RequestPaths;
 import api.models.RegisterUserDTO;
-import api.models.RegisterSuccessResponseDTO;
+import api.models.RegisterResponseDTO;
 import io.restassured.RestAssured;
 import static io.restassured.RestAssured.useRelaxedHTTPSValidation;
 import static io.restassured.http.ContentType.JSON;
@@ -22,7 +22,7 @@ public class RegisterUserApiTest {
 
         useRelaxedHTTPSValidation();
 
-        RegisterSuccessResponseDTO response = RestAssured.given()
+        RegisterResponseDTO response = RestAssured.given()
                 .baseUri(RequestPaths.BASE_URL)
                 .basePath(RequestPaths.REGISTER)
                 .contentType(JSON)
@@ -31,7 +31,7 @@ public class RegisterUserApiTest {
                 .post()
                 .then()
                 .statusCode(200)
-                .extract().as(RegisterSuccessResponseDTO.class);
+                .extract().as(RegisterResponseDTO.class);
 
         Assert.assertTrue(response.getId() > 0);
         Assert.assertNotNull(response.getToken());
