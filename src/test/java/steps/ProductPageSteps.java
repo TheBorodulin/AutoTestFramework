@@ -1,11 +1,11 @@
-package Steps;
+package steps;
 
-import Pages.ProductPage;
-import Constants.URLs;
+import pages.ProductPage;
+import constants.URLs;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
-import static Constants.Messages.SUCCESSFUL_PRODUCT_REVIEW_MESSAGE;
+import static constants.Messages.SUCCESSFUL_PRODUCT_REVIEW_MESSAGE;
 
 public class ProductPageSteps extends BaseSteps {
     private final ProductPage productPage;
